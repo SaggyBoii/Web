@@ -1,0 +1,327 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+body {
+    background-color: white;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    text-transform: uppercase;
+    background-color: transparent;
+    transition: background-color 0.3s ease-in-out;
+    padding: 0.5em;
+}
+
+.logo {
+    padding-right: 2em;
+    padding-top: 2em;
+}
+
+nav ul {
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-around;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    padding: 1rem;
+    border-radius: 1em;
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: black;
+    padding: 0.6rem;
+    position: relative;
+    display: inline-block;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-in-out;
+}
+
+nav ul li a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+header:hover {
+    background-color: #B9C49C;
+}
+.HeadContainer {
+    display: flex;
+}
+.HeadBackgroundContainer {
+    width: 100%;
+    padding-right: clamp(-20vw, 0 ,20vw);
+    float: right;
+    margin-left: 50%;
+}
+.Background {
+    width: auto;
+    height: 100%;
+    max-height: 70vh;
+    float: right;
+    transition: display 0.3s ease-in-out;
+}
+.HeadTextContainer {
+    position: absolute;
+    width: 35vw;
+    font-size: 2rem;
+    left: 5vw;
+    top: 15vh;
+}
+.HeadTextContainer h1 {
+    color: #ECB86F;
+    font-weight: bold;
+}
+.HeadTextContainer h2 {
+    color: #ECB86F;
+}
+.HeadTextContainer h3 {
+    color: #a2b780;
+    padding-top: 2rem;
+}
+.HeadTextContainer p {
+    padding-top: 2rem;
+}
+
+.FotoTextContainer1 {
+    display: grid;  /* Default grid layout for large screens */
+    grid-template-columns: 1fr 1fr;  /* Two equal columns for large screens */
+    gap: 1rem;  /* Space between columns */
+    align-items: stretch;  /* Align both the image and text to stretch the full container height */
+    padding: 1rem;
+}
+
+.FotoContainer1 {
+    width: 100%;
+    height: 100%;  /* Ensure the container takes up the full height */
+    position: relative;
+    overflow: hidden;  /* Hide any overflowing content from the image */
+}
+
+.TextContainer1 {
+    padding: 1rem;
+    background-color: white;
+    text-align: center;
+    font-size: 3rem;  /* Scales from 1rem to 2rem based on the width */
+    border-radius: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertically center the content */
+    align-items: center; /* Horizontally center the content */
+    height: 100%;  /* Ensure full height to make centering work */
+    box-shadow: 2px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.reserve {
+    text-align: center;
+}
+
+.reserve-button {
+    background-color: #B9C49C; /* Same as the container color */
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 1.5rem 3rem; /* More horizontal padding to increase width */
+    border: none;
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 2px 5px 15px rgba(0, 0, 0, 0.3);
+    margin-top: 1rem;  /* Space between the text and button */
+    width: auto;  /* Allow button to grow based on content */
+    max-width: 500px; /* Max width for the button */
+}
+.reserve-button:hover {
+    background-color: #a2b780; /* Slightly darker shade of #B9C49C */
+    transform: scale(1.05); /* Slightly enlarges the button on hover */
+}
+
+.reserve-button:active {
+    background-color: #8c9f64; /* Even darker shade when clicked */
+    transform: scale(1); /* Keeps it normal size when clicked */
+}
+
+.Foto1 {
+    object-fit: cover;  /* Ensures the image covers the entire container */
+    width: 100%;
+    height: 100%;  /* Ensures the image fills the container */
+    border-radius: 2rem;
+}
+.infoContainer1 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Creates 4 equal columns */
+    gap: 1rem;  /* Space between the items */
+    padding: 1rem;
+}
+
+.info {
+    text-align: center;
+    border-radius: 1rem;
+    box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+    transition: scale 0.3s ease-in-out;
+}
+.info:hover{
+    scale: 1.1;
+}
+.info img {
+    padding: 1rem;
+    scale: 2;
+    filter: brightness(5);
+    transition: filter 0.3s ease-in-out;
+}
+.info img:hover {
+    padding: 1rem;
+    scale: 2;
+    filter: brightness(1);
+}
+
+.info {
+    background-color: #ECB86F;
+}
+
+.info.b {
+    background-color: #B9C49C; 
+}
+
+.info.c {
+    background-color: #ECB86F; 
+}
+
+.info.d {
+    background-color: #D28A6A;
+}
+
+.info h1 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.info p {
+    font-size: 1.2rem;
+    color: white;
+}
+
+footer {
+    display: flex;
+    background-color: bisque;
+    flex-grow: 1;
+    width: 100%;
+    text-align: center;
+}
+
+.footer-content {
+    flex-grow: 1;
+}
+
+@media screen and (max-width: 500px) {
+    .infoContainer1 {
+        grid-template-columns: 1fr !important; /* Single column layout on very small screens */
+    }
+}
+
+@media screen and (max-width: 800px) {
+    header {
+        display: flex;
+        flex-direction: column; /* Stack the logo and navigation vertically */
+        align-items: center; /* Center the content horizontally */
+        padding: 1rem; /* Adjust padding for better spacing */
+        text-align: center;
+    }
+
+    .logo {
+        padding-right: 0; /* Reset right padding */
+        padding-top: 1rem; /* Adjust top padding for better spacing */
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: column; /* Stack navigation items vertically */
+        align-items: center; /* Center items */
+        gap: 0.2rem; /* Add space between navigation items */
+        width: 100%; /* Ensure the navigation takes full width */
+        flex-grow: 1;
+    }
+
+    nav ul li {
+        padding: 0.2rem;
+        font-size: 1.2rem; /* Adjust font size for smaller screens */
+        text-align: center; /* Ensure text is centered */
+        background-color: #D28A6A;
+        border-radius: 2rem;
+    }
+
+    .logo {
+        display: none; /* Hides the logo on small screens */
+    }
+
+    .FotoTextContainer1 {
+        display: flex;  /* Use flexbox for small screens */
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center content */
+    }
+
+    .FotoContainer1 {
+        margin-bottom: 20px; /* Adds space below the image */
+        height: 300px;  /* Fixed height for small screens */
+    }
+
+    .TextContainer1 {
+        font-size: 1.2rem;
+        text-align: center;
+        margin: 0;
+    }
+
+    .reserve-button {
+        font-size: 1.2rem;
+        padding: 1rem 2rem;
+    }
+
+    .infoContainer1 {
+        grid-template-columns: 1fr 1fr; /* Two columns on smaller screens */
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .TextContainer1 {
+        font-size: 2rem;
+    }
+
+    .HeadContainer {
+        display: grid;
+        grid-template-columns: 1fr; /* Switch to grid for smaller screens */
+    }
+
+    .Background {
+        display: none;  /* Hides background for smaller screens */
+    }
+
+    .HeadTextContainer {
+        position: static;
+        height: auto;
+        text-align: center;
+        width: 100%;
+        font-size: 1.2rem;
+    }
+}

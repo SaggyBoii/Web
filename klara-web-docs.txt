@@ -1,0 +1,6 @@
+klara web
+
+barvy hex
+#ECB86F orange
+#B9C49C green
+#D28A6A red

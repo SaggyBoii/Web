@@ -1,0 +1,465 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "jost"
+}
+body {
+    background-color: #F8F8F8;
+}
+main{
+    padding-left: 5vw;
+    padding-right: 5vw;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    text-transform: uppercase;
+    background-color: transparent;
+    padding: 0.5em;
+}
+
+header .LogoContainer{
+    display: flex;
+    flex-grow: 1;
+    justify-content: flex-end;
+    margin-right: 10vw;
+}
+.Logo {
+    width: auto;
+    height: 12vh;
+}
+.Logo2{
+    display: none;
+}
+
+nav ul {
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-around;
+    padding: 0;
+}
+
+nav ul li {
+    background-color: transparent;
+    display: inline;
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 1em;
+    font-size: 1.4rem;
+    font-weight: bold;
+    box-shadow: none;
+    transition:background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+
+nav ul li a {
+    text-decoration: none;
+    color: black;
+    padding: 0.6rem;
+    position: relative;
+    display: inline-block;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: black;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-in-out;
+}
+
+nav ul li a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+.sidebar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 400px;
+    z-index: 999;
+    background-color: transparent;
+    backdrop-filter: blur(1rem);
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    box-shadow: 2px 5px 15px rgba(0, 0, 0, 0.3);
+}
+.menu-button{
+    display: none;
+}
+.HeadContainer {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    grid-template-rows: 1fr;
+    gap: 0em 2em;
+    grid-auto-flow: row;
+    grid-template-areas:
+        ". .";
+}
+
+.HeadBackgroundContainer {
+    width: 95%;
+    margin-right: 20%;
+    align-content: end;
+    min-height: 80%;
+}
+.Background {
+   
+    width: 64vw;
+    height: auto;
+    overflow: visible;
+    float: right;
+}
+.HeadTextContainer {
+    width: 120%;
+    font-size: 2rem;
+    box-shadow: none;
+    transition: box-shadow 0.3s ease-in-out;
+    border-radius: 2rem;
+
+    
+}
+.HeadTextContainer:hover {
+    box-shadow: 2px 5px 15px rgba(0, 0, 0, 0.3); 
+}
+.HeadTextContainer h1 {
+    color: #ECB86F;
+    font-weight: bold;
+    
+}
+.HeadTextContainer h2 {
+    color: #ECB86F;
+    
+}
+.HeadTextContainer h3 {
+    color: #a2b780;
+    
+}
+.HeadTextContainer p {
+
+}
+
+.reserve {
+    text-align: center;
+}
+
+.reserve-button {
+    background-color: #B9C49C; /* Same as the container color */
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 1.5rem 3rem; /* More horizontal padding to increase width */
+    border: none;
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 2px 5px 15px rgba(0, 0, 0, 0.3);
+    margin: 2rem;
+    width: auto;  /* Allow button to grow based on content */
+    max-width: 500px; /* Max width for the button */
+}
+
+.FotoTextContainer1 {
+    display: grid;  /* Default grid layout for large screens */
+    grid-template-columns: 1fr 1fr;  /* Two equal columns for large screens */
+    gap: 1rem;  /* Space between columns */
+    align-items: stretch;  /* Align both the image and text to stretch the full container height */
+    padding: 1rem;
+}
+
+.FotoContainer1 {
+    width: 100%;
+    height: 100%;  /* Ensure the container takes up the full height */
+    position: relative;  /* Hide any overflowing content from the image */
+    
+}
+
+.TextContainer1 {
+    padding: 1rem;
+    background-color: white;
+    text-align: center;
+    font-size: 3rem;  /* Scales from 1rem to 2rem based on the width */
+    border-radius: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertically center the content */
+    align-items: center; /* Horizontally center the content */
+    height: 100%;  /* Ensure full height to make centering work */
+    box-shadow: 2px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+
+.reserve-button:hover {
+    background-color: #a2b780; /* Slightly darker shade of #B9C49C */
+    transform: scale(1.05); /* Slightly enlarges the button on hover */
+}
+
+.reserve-button:active {
+    background-color: #8c9f64; /* Even darker shade when clicked */
+    transform: scale(1); /* Keeps it normal size when clicked */
+}
+
+.Foto1 {
+    object-fit: cover;  /* Ensures the image covers the entire container */
+    width: 100%;
+    height: 100%;  /* Ensures the image fills the container */
+    border-radius: 2rem;
+    box-shadow: 2px 5px 15px rgba(0, 0, 0, 0.3);
+}
+.infoContainer1 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Creates 4 equal columns */
+    gap: 1rem;  /* Space between the items */
+    padding: 1rem;
+}
+
+.info {
+    text-align: center;
+    border-radius: 1rem;
+    box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+    transition: scale 0.3s ease-in-out;
+    padding: 1rem;
+}
+.info:hover{
+    scale: 1.1;
+}
+.info img {
+    padding: 1rem;
+    scale: 2;
+    filter: brightness(5);
+    transition: filter 0.3s ease-in-out;
+}
+.info img:hover {
+    padding: 1rem;
+    scale: 2;
+    filter: brightness(1);
+}
+
+.info {
+    background-color: #ECB86F;
+}
+
+.info.b {
+    background-color: #B9C49C; 
+}
+
+.info.c {
+    background-color: #ECB86F; 
+}
+
+.info.d {
+    background-color: #D28A6A;
+}
+
+.info h1 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.info p {
+    font-size: 1.2rem;
+    color: white;
+}
+.FotoTextContainer2{
+    display: grid;
+    grid-template-columns: 1fr 1.7fr;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    align-items: stretch;
+    padding: 1rem;
+    
+}
+.FotoContainer2{
+    display:flex;
+    width: 100%;
+    height: 100%;
+    border-radius: 2rem;
+    overflow: hidden;
+    justify-content: center;
+    align-items: start;
+}
+.Foto2 {
+    width: 100%; /* Ensure the width is 100% to fill the container */
+    height: 100%; /* Ensure the height is 100% to fill the container */
+    object-fit: cover; /* This ensures the image covers the entire container */
+    border-radius: 2rem;
+    box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+    margin: 0;
+}
+.TextContainer2{
+    text-align: center;
+    font-size: 1.8rem;
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.50);
+    box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 2rem;
+}
+.Background2Container{
+    position: absolute;
+    width: 100%;
+}
+.Background2{
+    bottom: 0;
+    position:absolute;
+    z-index: -1;
+    width: 100vw;
+    
+}
+
+footer {
+    display: flex;
+    background-color: #ECB86F;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+@media screen and (max-width: 500px) {
+    .infoContainer1 {
+        grid-template-columns: 1fr !important; /* Single column layout on very small screens */
+    }
+    .sidebar{
+        width: 100%;
+    }
+    .TextContainer2{
+        font-size: 0.5em;
+        padding: 1rem;
+    }
+    .FotoTextContainer2{
+        display: flex;  /* Use flexbox for small screens */
+        flex-direction: column; /* Stack items vertically */
+        align-items: center;
+    }
+    .Foto2{
+        width: 100%;
+    }
+
+
+    
+}
+
+@media screen and (max-width: 900px) {
+    header {
+        display: flex;
+        flex-direction: column; 
+        align-items: start; /* Center the content horizontally */
+        padding: 0.5rem; /* Adjust padding for better spacing */
+        text-align: center;
+    }
+    nav ul {
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column; /* Stack navigation items vertically */
+        gap: 0.2rem; /* Add space between navigation items */
+        width: 100%; /* Ensure the navigation takes full width */
+        flex-grow: 1;
+        background-color: transparent;
+    }
+
+    nav ul li {
+        padding: 0.2rem;
+        font-size: 1.2rem; /* Adjust font size for smaller screens */
+        
+        text-align: right; /* Ensure text is centered */
+        border-radius: 2rem;
+    }
+
+    .FotoTextContainer1 {
+        display: flex;  /* Use flexbox for small screens */
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center content */
+    }
+
+    .FotoContainer1 {
+        margin-bottom: 1rem; /* Adds space below the image */
+        height: 100%;  /* Fixed height for small screens */
+    }
+
+    .TextContainer1 {
+        font-size: 1.2rem;
+        text-align: center;
+        margin: 0;
+    }
+    .TextContainer2 {
+        font-size: 1.2rem;
+        text-align: center;
+        margin: 0;
+    }
+
+    .reserve-button {
+        font-size: 1.2rem;
+        padding: 1rem 2rem;
+    }
+
+    .infoContainer1 {
+        grid-template-columns: 1fr 1fr; /* Two columns on smaller screens */
+    }
+    .hideOnMobile{
+        display: none;
+    }
+    .menu-button{
+        display: block;
+
+    }
+    .FotoTextContainer2{
+        grid-template-columns: 1fr;
+    }
+    .Logo{
+        display: none;
+    }
+    .LogoContainer2{
+        display:flex;
+        justify-content: center;
+    }
+    .Logo2{
+        display: flex;
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .TextContainer1 {
+        font-size: 2rem;
+    }
+    .TextContainer2 {
+        font-size: 1.5rem;
+    }
+
+    .HeadContainer {
+        display: grid;
+        grid-template-columns: 1fr; /* Switch to grid for smaller screens */
+    }
+
+    .Background {
+        display: none;  /* Hides background for smaller screens */
+    }
+
+    .HeadTextContainer {
+        position: static;
+        height: auto;
+        text-align: center;
+        width: 100%;
+        font-size: 1.2rem;
+        margin: 1rem;
+    }
+
+}
+    @media screen and (min-width: 900px) {
+        nav ul li:hover{
+            background-color: rgba(140, 159, 100, 0.47);
+            box-shadow: 2px 5px 15px rgba(0, 0, 0, 0.3);
+        }
+    }
+
